@@ -1,0 +1,136 @@
+.bgfade{
+  width: 100%;
+  background: url(../images/4.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.text{
+  background-color: rgba(0, 0, 0, 0.286);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.text:before{
+  z-index: 777;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.text .content{
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-top: 50px;
+}
+.text .content h1{
+  font-size: var(--header);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+.text .content h1 span{
+  font-weight: 900;
+}
+.text .content p{
+  width: 90%;
+  font-size: var(--subheading);
+  font-weight: 400;
+  margin-bottom: 45px;
+}
+.text .media-icons{
+  z-index: 888;
+  position: absolute;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+.text .media-icons a{
+  color: #fff;
+  font-size: 1.6em;
+  transition: 0.3s ease;
+}
+.text .media-icons a:not(:last-child){
+  margin-bottom: 20px;
+}
+.text .media-icons a:hover{
+  transform: scale(1.3);
+}
+@media (max-width: 1200px){
+  :root{
+    --header: 2.5em;
+    --subheading: 1.3em;
+    --button: 1em;
+  }
+  .text{
+    padding: 40px;
+  }
+  .text .content h1{
+    line-height: 45px;
+    margin-bottom: 20px;
+  }
+  .text .media-icons{
+    margin-right: 20px;
+  }
+}
+@media (max-width: 800px){
+  .text{
+    padding: 20px;
+  }
+  .text .content h1{
+    line-height: 45px;
+    margin-bottom: 15px;
+  }
+  .text .content p{
+    margin-bottom: 20px;
+  }
+  .text .media-icons{
+    margin-right: 0px;
+  }
+}
+@media (max-width: 600px){
+  :root{
+    --header: 1.9em;
+    --subheading: 1.1em;
+    --button: 1em;
+  }
+  .text{
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .text .content{
+    width: 100%;
+    margin-top: -7vh;
+  }
+  .text .content h1{
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+  .text .content p{
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .text .media-icons{
+    bottom: 0px;
+    margin-right: 0px;
+    flex-direction: row;
+    left: 0;
+    padding-left: 20px;
+    justify-content: left;
+  }
+  .text .media-icons a{
+    padding-right: 30px;
+    font-size: 20px;
+  }
+}

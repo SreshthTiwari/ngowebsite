@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reach out to Metanoia Kleos about anything that might be bothering you"
+    />
+    <link rel="stylesheet" href="../assets/style/contact.css" />
+    <link rel="stylesheet" href="../assets/style/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div class="nav">
+      <a href="#" class="brand">Metanoia Kleos</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="../">Home</a>
+          <a href="../about/">About</a>
+          <a href="../support/">Support Us</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="first">
+      <div class="text" id="before">
+        <h1>We're Here For You</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+          similique minus quis, necessitatibus, recusandae.
+        </h3>
+        <button onclick="next()" class="genb">Continue</button>
+      </div>
+      <div class="form" id="next">
+        <form id="contactForm">
+          <h1>Contact Us</h1>
+          <div class="inputs">
+            <input
+              name="name"
+              type="text"
+              class="feedback-input"
+              placeholder="Name"
+              id="name"
+              autofocus
+              required
+            />
+            <input
+              name="email"
+              id="email"
+              type="email"
+              class="feedback-input"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <textarea
+            name="text"
+            class="feedback-input"
+            placeholder="Message"
+            id="message"
+            required
+          ></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div class="text" id="thankyou">
+        <h1>Thank You For Reaching Out.</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio iusto
+          obcaecati excepturi.
+        </h3>
+        <a href="../index.html" class="genb">Home</a>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/132a574215.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module">
+      window.onload = function () {
+        document.getElementById("loader").style.opacity = "0";
+      };
+      setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+      }, 2000);
+      //Javacript for responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      window.next = function next() {
+        document.getElementById("next").style.zIndex = "100";
+        document.getElementById("before").style.zIndex = "1";
+        document.getElementById("before").style.opacity = "0";
+        document.getElementById("next").style.opacity = "1";
+      };
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        get,
+        child,
+        update,
+        remove,
+        ref,
+      } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBVcdv6wJhKpavRLS-vR14N7PmiIHcStpA",
+        authDomain: "metanoia-kleos.firebaseapp.com",
+        projectId: "metanoia-kleos",
+        storageBucket: "metanoia-kleos.appspot.com",
+        messagingSenderId: "920124591387",
+        appId: "1:920124591387:web:c4c4f6d1fdfb396c4657be",
+        measurementId: "G-NF02W072EG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getDatabase(app);
+
+      // Reference messages collection
+      var dbref = ref(db);
+
+      // Listen for form submit
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", submitForm);
+
+      // Submit form
+      function submitForm(e) {
+        e.preventDefault();
+
+        // Get values
+        var name = getInputVal("name");
+        var email = getInputVal("email");
+        var message = getInputVal("message");
+
+        // Save message
+        saveMessage(name, email, message);
+
+        document.getElementById("next").style.display = "none";
+        document.getElementById("before").style.display = "none";
+        document.getElementById("thankyou").style.display = "block";
+
+        document.getElementById("contactForm").reset();
+      }
+
+      // Function to get get form values
+      function getInputVal(id) {
+        return document.getElementById(id).value;
+      }
+
+      // Save message to firebase
+      function saveMessage(name, email, message) {
+        set(
+          ref(
+            db,
+            "Messages/newmessage".concat(
+              (Math.random() + 1).toString(36).substring(9)
+            )
+          ),
+          {
+            name: name,
+            email: email,
+            message: message,
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

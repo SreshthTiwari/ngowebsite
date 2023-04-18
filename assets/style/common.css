@@ -1,0 +1,321 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+  --navheading: 1.5em;
+  --header: 4em;
+  --subheading: 1.5em;
+  --button: 1.2em;
+}
+h1{
+  font-size: var(--header);
+}
+h3, p{
+  font-size: var(--subheading);
+}
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  width: 0;
+}
+::selection{
+  color: white;
+  background-color: black;
+}
+#loader{
+  z-index: 999;
+  min-width: 100vw;
+  min-height: 100vh;
+  transition: 1s;
+  background-color: white;
+  position: fixed;
+}
+#rest{
+opacity: 0;  transition: 1s;
+}
+.genb{
+  border: 1.5px solid white;
+  outline: none;
+  color: white;
+  text-decoration: none;
+  padding: 9px 20px;
+  background-color: transparent;
+  border-radius:20px;
+  font-size: var(--button);
+  transition: .3s ease;
+}
+.genb:hover{
+  background-color: white;
+  color: black;
+}
+.dark{
+  border: 1.5px solid black;
+  color: black;
+  margin-right: 20px;
+}
+.dark:hover{
+  background-color: black;
+  color: white;
+}
+.not100{
+  width: auto;
+  margin: 20px auto;
+}
+.first{
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-position: center;  
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first .text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.first .text h1{
+  padding: .1em;
+  font-size: var(--header);
+}
+.text h3{
+  padding: 0 4em;
+  padding-bottom: 2em;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 80%;
+  line-height: 120%;
+  font-size: var(--subheading);
+}
+.contact{
+  width: 88%;
+  border-radius: 12px;
+  margin: 5% auto 10%;
+  padding: 8% 2%;
+  text-align: center;
+  background-position: center;  
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+.contact h3{
+  font-weight: 100;
+  margin: auto;
+  padding: 1em 1em 2em;
+}
+.contact a{
+  font-weight: 500;
+}
+.nav{
+  z-index: 899;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  transition: 0.5s ease;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.198), rgba(0, 0, 0, 0));
+}
+.nav .brand{
+  color: #fff;
+  font-size: var(--navheading);
+  font-weight: 700;
+  text-decoration: none;
+}
+.nav .navigation{
+  position: relative;
+}
+.nav .navigation .navigation-items a{
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+.nav .navigation .navigation-items a:before{
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 0;
+  height: 1.6px;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s ease;
+}
+.nav .navigation .navigation-items a:hover:before{
+  width: 100%;
+}
+@media (max-width: 1200px){
+  .contact h3{
+    padding: 1em 0 2em;
+    width: 100%;
+  }
+  .nav{
+    padding: 12px 40px;
+  }
+  :root{
+    --navheading: 1.3em;
+  }    
+  .text .media-icons{
+    right: 15px;
+  }
+  .nav .navigation{
+    display: none;
+  }
+  .nav .navigation.active{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+    transform: .3s ease;
+  }
+  .nav .navigation .navigation-items a{
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+  .nav .navigation .navigation-items a:before{
+    background: #222;
+    height: 5px;
+  }
+  .nav .navigation.active .navigation-items{
+    background: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+  .menu-btn{
+    background: url(../images/menu.png)no-repeat;
+    background-size: 20px;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .menu-btn.active{
+    z-index: 999;
+    background: url(../images/close.png)no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+  :root{
+    --header: 2.5em;
+    --subheading: 1.3em;
+    --button: 1em;
+  }
+  .text h3{
+    padding: 0 2em 1.2em;
+  width: 100%;
+  }
+}
+@media (max-width: 800px){
+  :root{
+    --header: 2em;
+    --subheading: 1.1em;
+    --button: .8em;
+  }
+  .text h3{
+    padding: 0 1em 1.5em;
+  width: 100%;
+  }
+  .nav{
+    padding: 12px 20px;
+  }
+  :root{
+    --navheading: 1.2em;
+  }
+  .text .media-icons{
+    right: 15px;
+  }
+  .nav .navigation{
+    display: none;
+  }
+  .nav .navigation.active{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+  }
+  .nav .navigation .navigation-items a{
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+  .nav .navigation .navigation-items a:before{
+    background: #222;
+    height: 5px;
+  }
+  .nav .navigation.active .navigation-items{
+    background: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+  .menu-btn{
+    background: url(../images/menu.png)no-repeat;
+    background-size: 20px;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .menu-btn.active{
+    z-index: 999;
+    background: url(../images/close.png)no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+}
+@media (max-width: 600px){
+  :root{
+    --header: 1.9em;
+    --subheading: 1.1em;
+    --button: 1em;
+}
+}

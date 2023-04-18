@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="The official website for Metanoia Kleos Empowerment Foundation"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="stylesheet" href="./assets/style/common.css" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Metanoia Kleos</title>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div class="bgfade" id="rest">
+      <div class="nav">
+        <a href="#" class="brand">Metanoia Kleos</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+          <div class="navigation-items">
+            <a href="#">Home</a>
+            <a href="./about">About</a>
+            <a href="./support/">Support Us</a>
+            <a href="./contact/">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="text" id="home">
+        <div class="content">
+          <h1>Mental Health<br /><span>Matters</span></h1>
+          <p>
+            Welcome to the official website for Metanoia Kleos Empowerment
+            Foundation! Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit.
+          </p>
+          <a class="genb" href="./about">About Us</a>
+          <a class="genb" style="margin-left: 15px" href="./support/"
+            >Support Us</a
+          >
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/132a574215.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      //loader
+      window.onload = function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("rest").style.opacity = "1";
+      };
+
+      //nav menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

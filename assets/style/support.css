@@ -1,0 +1,106 @@
+.first{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/donate.webp);
+}
+.donate{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15vh 0;
+}
+.donatecontent{
+  width: 87%;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+}
+.donatetext{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/donate.webp);
+  padding: 8%;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  border-radius: 12px 0 0 12px;
+}
+.donatetext h1{
+  padding-top: 2%;
+}
+.donatetext h3{
+  font-weight: 100;
+}
+.donatetext a{
+  margin: 0;
+  border: 1.2px solid white;
+  font-weight: 400;
+}
+.donatetext .line{
+  width: 30%;
+  height: 1px;
+  background-color: white;
+  margin: 2% 0;
+  z-index: 999;
+}
+.donatebuttons{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  min-width: 40%;
+  padding: 5%;
+  justify-content: center;
+}
+.donatebuttons h1{
+  font-size: calc(var(--header)*0.6);
+}
+.donatebuttons p{
+  font-size: calc(var(--subheading)*0.8);
+  margin: 5% 0;
+}
+.hrow{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-basis: 15%;
+  padding: 5% 0;
+}
+.dark{
+  margin-right: 0!important;
+  font-size: var(--subheading)!important;
+  font-weight: 500!important;
+}
+.contact{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/donate.webp);
+}
+@media (max-width: 1200px){
+  .donatecontent{
+    flex-direction: column;
+  }
+  .donatetext{
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    padding: 15% 8%;
+  }
+  .donatetext h3{
+    margin-bottom: 5%;
+  }
+  .donatebuttons{
+    width: 100%;
+    text-align: left;
+    padding: 15% 8%;
+  }
+  .donatebuttons h1{
+    font-size: var(--header);
+  }
+  .donatebuttons p{
+    font-size: var(--subheading);
+  }
+  .hrow{
+  justify-content: flex-start;    
+  }
+}
+
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Support the Metanoia Kleos Empowerment Foundation"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style/support.css" />
+    <link rel="stylesheet" href="../assets/style/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Support Us</title>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div class="nav">
+      <a href="#" class="brand">Metanoia Kleos</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="../">Home</a>
+          <a href="../about/">About</a>
+          <a href="#">Support Us</a>
+          <a href="../contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="first" id="rest">
+      <div class="text">
+        <h1>Support Us</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+          debitis corporis reprehenderit.
+        </h3>
+        <div class="buttons">
+          <a href="#donate" class="genb">Donate</a>
+        </div>
+      </div>
+    </div>
+    <div class="donate" id="donate">
+      <div class="donatecontent">
+        <div class="donatetext">
+          <h1>Lorem, ipsum dolor.</h1>
+          <div class="line"></div>
+          <h3>
+            Payments secure, after payment youll recievce confirmation, Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Vel quo sunt rem.
+          </h3>
+          <h3 style="padding-bottom: 5%; padding-top: 7%; font-weight: 600">
+            Have a Question?
+          </h3>
+          <a class="genb" href="#contact">Contact Us</a>
+        </div>
+        <div class="donatebuttons">
+          <h1>Choose An Amount</h1>
+          <p>
+            You will be redirected to a payment page after clicking the button
+          </p>
+          <div class="buttonslist">
+            <div class="hrow">
+              <a
+                href="https://buy.stripe.com/test_3cs8A634O2xFdq08ww"
+                class="dark genb"
+                target="_blank"
+                >Donate 1,000 INR</a
+              >
+            </div>
+            <div class="hrow">
+              <a
+                href="https://buy.stripe.com/test_5kA03A34O3BJbhS9AC"
+                class="dark genb"
+                target="_blank"
+                >Donate 5,000 INR</a
+              >
+            </div>
+            <div class="hrow">
+              <a
+                href="https://buy.stripe.com/test_7sI4jQeNwa07gCc9AD"
+                class="dark genb"
+                target="_blank"
+                >Donate 15,000 INR</a
+              >
+            </div>
+            <div class="hrow">
+              <a
+                href="https://buy.stripe.com/test_8wMg2ycFofkr3Pq4gh"
+                class="dark genb"
+                target="_blank"
+                >Donate A Custom Amount</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact" id="contact">
+      <div class="contacttext">
+        <h1>Metanoia Kleos</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          laborum aperiam impedit!
+        </h3>
+        <a style="margin-right: 15px" href="../about/" class="genb">About Us</a>
+        <a href="../contact/" class="genb">Contact Us!</a>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/132a574215.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById("loader").style.opacity = "0";
+        document.getElementById("rest").style.opacity = "1";
+      };
+      setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+      }, 2000);
+      //Javacript for responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
